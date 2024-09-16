@@ -1,0 +1,61 @@
+Étape 1 : Installer Geth
+Tout d'abord, vous devez installer Geth sur votre machine. Vous pouvez télécharger la version la plus récente de Geth sur le site officiel d'Ethereum.
+
+Étape 2 : Créer un fichier de configuration
+Créez un fichier de configuration pour votre blockchain privée. Ce fichier définit les paramètres de votre réseau, tels que la difficulté de minage, la récompense par bloc, etc.
+
+{
+ "config": {
+ "chainId": 15,
+ "homesteadBlock": 0,
+ "eip155Block": 0,
+ "eip158Block": 0
+ },
+ "alloc": {
+ "0x0000000000000000000000000000000000000001": {
+ "balance": "100000000000000000000"
+ }
+ },
+ "coinbase": "0x0000000000000000000000000000000000000001",
+ "difficulty": "0x400",
+ "extraData": "0x",
+ "gasLimit": "0x2fefd8",
+ "gasUsed": "0x0",
+ "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+ "nonce": "0x0",
+ "number": "0x0",
+ "timestamp": "0x0",
+ "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+
+Étape 3 : Créer un fichier de genesis
+Créez un fichier de genesis qui définit l'état initial de votre blockchain.
+Ce fichier est utilisé pour initialiser votre blockchain.
+{
+ "config": {
+ "chainId": 15,
+ "homesteadBlock": 0,
+ "eip155Block": 0,
+ "eip158Block": 0
+ },
+ "alloc": {
+ "0x0000000000000000000000000000000000000001": {
+ "balance": "100000000000000000000"
+ }
+ },
+ "coinbase": "0x0000000000000000000000000000000000000001",
+ "difficulty": "0x400",
+ "extraData": "0x",
+ "gasLimit": "0x2fefd8",
+ "gasUsed": "0x0",
+ "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+ "nonce": "0x0",
+ "number": "0x0",
+ "timestamp": "0x0",
+ "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+}
+
+Etape 4 : Lancer Geth
+Lancez Geth avec les options suivantes pour créer votre blockchain privée :
+geth --datadir <répertoire de données> init <fichier de genesis>
+
